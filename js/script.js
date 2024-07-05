@@ -17,7 +17,7 @@ function secondsToMinutesSecounds(seconds) {
 
 async function getsongs(folder) {
   currfolder = folder;
-  let a = await fetch(`http://127.0.0.1:3000/${folder}/`);
+  let a = await fetch(`/${folder}/`)
   let response = await a.text();
   let div = document.createElement("div");
   div.innerHTML = response;
@@ -26,10 +26,9 @@ async function getsongs(folder) {
   for (let index = 0; index < as.length; index++) {
     const element = as[index];
     if (element.href.endsWith(".mp3")) {
-      songs.push(element.href.split(`/${folder}/`)[1])
+      songs.push(element.href.split(`/${folder}/`)[1]);
     }
   }
-
 
   //show all the songs in the playlist
   let songul = document
@@ -59,7 +58,7 @@ async function getsongs(folder) {
       playMusic(e.querySelector(".info").firstElementChild.innerHTML.trim());
     });
   });
-  return songs
+  return songs;
 }
 const playMusic = (track, pause = false) => {
   // let audio = new Audio("/songs/" + track)
@@ -106,14 +105,11 @@ async function displayAlbums() {
     }
   }
 
-
   //load the playlist whenever card is clicked
   Array.from(document.getElementsByClassName("card")).forEach((e) => {
     e.addEventListener("click", async (item) => {
       songs = await getsongs(`songs/${item.currentTarget.dataset.folder}`);
-      playMusic(songs[0])
-
-
+      playMusic(songs[0]);
     });
   });
 }
@@ -137,8 +133,6 @@ async function main() {
       play.src = "img/play.svg";
     }
   });
-
-  
 
   //listen for time update event
   currentSong.addEventListener("timeupdate", () => {
