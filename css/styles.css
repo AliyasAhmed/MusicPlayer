@@ -87,7 +87,7 @@ body {
   max-height: 60vh;
 }
 
-.card:hover{
+.card:hover {
   background-color: rgba(145, 145, 145, 0.055);
   cursor: pointer;
   transition: 0.3s ease-in-out;
@@ -122,7 +122,7 @@ body {
   transition: all 0.3s ease-out;
   cursor: pointer;
 }
-.play:hover{
+.play:hover {
   opacity: 1;
 }
 
@@ -159,8 +159,11 @@ body {
   border: 3px solid white;
 }
 .playbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
-  bottom: 0px;
+  bottom: 10px;
   filter: invert(1);
   background-color: #dad5d5;
   border-radius: 25px;
@@ -228,8 +231,8 @@ body {
   background: black;
   border-radius: 10px;
   position: absolute;
-  bottom: 0;
-  margin: 6px;
+  bottom: 14px;
+  margin: 2px;
   cursor: pointer;
 }
 .circle {
@@ -267,7 +270,7 @@ body {
   gap: 12px;
   cursor: pointer;
 }
-.range input{
+.range input {
   cursor: pointer;
 }
 .abovebar {
@@ -276,15 +279,18 @@ body {
   margin: 20px 0;
 }
 
+
 @media (max-width: 1200px) {
   .left {
-    position: absolute;
+    position: fixed;
     left: -133%;
     transition: all 0.3s;
     z-index: 1;
     width: 373px;
     background-color: black;
     padding: 0;
+    height: 100vh;
+    top: 0;
   }
   .songinfo,
   .songtime {
@@ -334,27 +340,41 @@ body {
     align-items: center;
   }
 
-  .cardContainer{
-    max-height:unset;
+  .cardContainer {
+    max-height: unset;
     overflow-y: unset;
     margin-bottom: 30vh;
   }
+  .play:hover {
+    opacity: 1;
+    opacity: 1;
+    top: 300px;
+  }
+  
 }
 
 @media (max-width: 500px) {
   .card {
     width: 100%;
   }
-  .header>* {
+  .header > * {
     padding: 2px;
   }
-  .buttons>* {
+  .buttons > * {
     margin: 0 6px;
   }
-  .spotifyPlaylists h1{
+  .spotifyPlaylists h1 {
     padding: 4px;
   }
-  .header{
+  .header {
     padding: 10px;
+  }
+  .left{
+    position: fixed;
+    height: 100vh;
+  }
+  .play {
+    opacity: 1;
+    top: 300px;
   }
 }
