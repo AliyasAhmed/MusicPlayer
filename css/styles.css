@@ -159,9 +159,9 @@ body {
   border: 3px solid white;
 }
 .playbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
   position: fixed;
   bottom: 10px;
   filter: invert(1);
