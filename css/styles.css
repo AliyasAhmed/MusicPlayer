@@ -22,7 +22,24 @@ body {
   width: 75vw;
   position: relative;
 }
-
+#play{
+  filter: invert(1);
+}
+#previous{
+  filter: invert(1);
+}
+#next{
+  filter: invert(1);
+}
+.songinfo{
+  filter: invert(1);
+}
+.songtime{
+  filter: invert(1);
+}
+.volume{
+  filter: invert(1);
+}
 .home ul li {
   list-style: none;
   width: 14px;
@@ -163,9 +180,11 @@ body {
   /* justify-content: center; */
   /* align-items: center; */
   position: fixed;
-  bottom: 10px;
-  filter: invert(1);
-  background-color: #dad5d5;
+  bottom: 35px;
+  /* filter: invert(1); */
+  /* background-color: #dad5d5; */
+  background: transparent;
+  backdrop-filter: blur(8px);
   border-radius: 25px;
   width: 90%;
   padding: 10px;
@@ -228,10 +247,10 @@ body {
 .seekbar {
   height: 4px;
   width: 97%;
-  background: black;
+  background: rgb(255, 255, 255);
   border-radius: 10px;
   position: absolute;
-  bottom: 14px;
+  bottom: 8px;
   margin: 2px;
   cursor: pointer;
 }
@@ -241,7 +260,7 @@ body {
   border-radius: 13px;
   background-color: black;
   position: relative;
-  bottom: 6px;
+  bottom: 5px;
   left: 0%;
   transition: left 0.5s;
 }
@@ -269,6 +288,7 @@ body {
   align-items: center;
   gap: 12px;
   cursor: pointer;
+  padding-right: 17px;
 }
 .range input {
   cursor: pointer;
@@ -292,6 +312,10 @@ body {
     height: 100vh;
     top: 0;
   }
+  .playbar{
+    bottom: 0px;
+  }
+  
   .songinfo,
   .songtime {
     width: auto;
@@ -314,6 +338,7 @@ body {
   }
   .playbar {
     width: calc(100vw - 75px);
+    padding-right: 17px;
   }
   .seekbar {
     width: calc(100vw - 75px);
@@ -376,5 +401,8 @@ body {
   .play {
     opacity: 1;
     top: 300px;
+  }
+  .playbar{
+    bottom: 0px;
   }
 }
