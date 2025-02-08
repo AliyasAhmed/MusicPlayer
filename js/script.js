@@ -109,7 +109,9 @@ async function displayAlbums() {
   Array.from(document.getElementsByClassName("card")).forEach((e) => {
     e.addEventListener("click", async (item) => {
       songs = await getsongs(`songs/${item.currentTarget.dataset.folder}`);
-      playMusic(songs[0]);
+      random = Math.floor(Math.random() * songs.length)
+      // playMusic(songs[0]);
+      playMusic(songs[random]);
     });
   });
 }
