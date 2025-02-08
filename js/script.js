@@ -215,5 +215,3 @@ async function main() {
 }
 main();
 
-
-This function will return all the songs from our directory
