@@ -1,0 +1,13 @@
+{
+  "rewrites": [
+    { "source": "/songs/:folder/:file", "destination": "/songs/:folder/:file" }
+  ],
+  "headers": [
+    {
+      "source": "/songs/:folder/:file",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
+    }
+  ]
+}
