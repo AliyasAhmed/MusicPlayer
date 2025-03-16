@@ -1,13 +1,11 @@
 {
-  "rewrites": [
-    { "source": "/songs/:folder/:file", "destination": "/songs/:folder/:file" }
-  ],
-  "headers": [
+  "routes": [
     {
-      "source": "/songs/:folder/:file",
-      "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "*" }
-      ]
+      "handle": "filesystem"
+    },
+    {
+      "src": "/.*",
+      "dest": "/index.html"
     }
   ]
 }
